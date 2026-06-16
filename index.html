@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ජපන් භාෂා පෙළ පොත - ශ්‍රව්‍ය සහ රූප සහිතයි</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container" id="top">
+    <div class="mode-toggle-container">
+        <button id="mode-toggle-btn" onclick="toggleMode()">🌙 Dark Mode</button>
+    </div>
+
+    <h1>農業技能測定試験</h1>
+    <div class="subtitle">කෘෂිකාර්මික කුසලතා ඇගයීම් පරීක්ෂණය - ජපන් භාෂා පෙළ පොත (කොටස් 58 ම ඇතුළත්ය)</div>
+
+    <div class="toc-box">
+        <h2>පටුන (Index)</h2>
+        <ul class="toc-list">
+            <li><a href="#intro">📖 හැඳින්වීම (Introduction)</a></li>
+            <li><a href="#hiragana">🔤 1. අක්ෂර: හිරගන (01 - 03)</a></li>
+            <li><a href="#katakana">🔤 2. අක්ෂර: කතකන (04 - 08)</a></li>
+            <li><a href="#numbers">🔢 2. ඉලක්කම් සහ මිල (09 - 10)</a></li>
+            <li><a href="#time">🕒 වේලාව - じ / ふん (11 - 12)</a></li>
+            <li><a href="#calendar">📅 දින දර්ශනය - がつ / にち (13 - 14)</a></li>
+            <li><a href="#time-words">💬 කාලයට සම්බන්ධ වචන (15 - 16)</a></li>
+            <li><a href="#counting">📊 ගණන් කරන ආකාරය - つ / ほん (17 - 18)</a></li>
+            <li><a href="#nouns">🍎 3. නාමපද (19 - 27)</a></li>
+            <li><a href="#ko-so-a-do">📍 කෝ - සෝ - අ - ඩො (28 - 30)</a></li>
+            <li><a href="#places">🏢 ස්ථාන සහ පිහිටීම් (31 - 33)</a></li>
+            <li><a href="#verbs">🏃‍♂️ 4. ක්‍රියා පද - ます Form (34 - 41)</a></li>
+            <li><a href="#adjectives">🎨 5. නාම විශේෂණ - い / な (42 - 47)</a></li>
+            <li><a href="#questions">❓ 6. ප්‍රශ්න කිරීම් සහ ආචාර සමාචාර (48 - 49)</a></li>
+            <li><a href="#exercises">📝 පුළුල් අභ්‍යාස සහ සවන්දීම (50 - 58)</a></li>
+        </ul>
+    </div>
+
+    <div id="lessons-container">
+        </div>
+</div>
+
+<script>
+    function toggleMode() {
+        const body = document.body;
+        const btn = document.getElementById('mode-toggle-btn');
+        
+        body.classList.toggle('dark-mode');
+        
+        if (body.classList.contains('dark-mode')) {
+            btn.innerHTML = "☀️ Light Mode";
+        } else {
+            btn.innerHTML = "🌙 Dark Mode";
+        }
+    }
+</script>
+<script src="script.js"></script>
+</body>
+</html>
