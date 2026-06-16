@@ -186,7 +186,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <audio controls preload="none">
                             <source src="https://asat-nca.jp/jp/mp3/${item.track}.mp3" type="audio/mpeg">
                         </audio>
-                        <img class="lesson-img" src="japanese_img/${item.track}.png" alt="පින්තූරය ${item.track}" loading="lazy">
+                        <img class="lesson-img" src="${item.track}.webp" alt="පින්තූරය ${item.track}" loading="lazy">
                     </div>
                 `;
             });
