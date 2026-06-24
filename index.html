@@ -37,16 +37,29 @@
         </ul>
     </div>
 
+    
     <div id="lessons-container">
-        </div>
+    </div>
 </div>
+
 <div style="text-align: center; margin-top: 40px; margin-bottom: 20px; font-size: 14px; color: #555; border-top: 1px solid #ddd; padding-top: 20px;">
-    <p style="margin: 5px 0;">SSW Agriculture Exam System | 2026</p>
+    
+    <div style="margin-bottom: 15px; overflow: hidden;">
+        <img src="https://count.getloli.com/get/@gnrzoop-ssw-agri" alt="visitor counter" style="max-width: 100%; height: auto;">
+    </div>
+
+    <p style="margin: 5px 0;">SSW Agriculture Exam System | <span id="year-display">2026</span></p>
     <a href="https://github.com/gnrzoop" target="_blank" style="text-decoration: none; color: #6750a4; font-weight: bold;">
-        © 2026 gnrzoop | GitHub
+        © <span id="copy-year">2026</span> gnrzoop | GitHub
     </a>
 </div>
+
 <script>
+    // වර්තමාන වර්ෂය ස්වයංක්‍රීයව යාවත්කාලීන කිරීම
+    const currentYear = new Date().getFullYear();
+    document.getElementById('year-display').innerText = currentYear;
+    document.getElementById('copy-year').innerText = currentYear;
+
     function toggleMode() {
         const body = document.body;
         const btn = document.getElementById('mode-toggle-btn');
@@ -61,5 +74,6 @@
     }
 </script>
 <script src="script.js"></script>
+<script src="images.js"></script>
 </body>
 </html>
