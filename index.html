@@ -9,8 +9,9 @@
 <body>
 
 <div class="container" id="top">
+    <!-- 🌓 Toggle Button එක වෙනුවට අලුතින් දැමූ Home බටන් එක -->
     <div class="mode-toggle-container">
-        <button id="mode-toggle-btn" onclick="toggleMode()">🌙 Dark Mode</button>
+        <a href="http://gnrzoop.github.io/Japanyamu/" id="home-btn">Home</a>
     </div>
 
     <h1>農業技能測定試験</h1>
@@ -37,7 +38,6 @@
         </ul>
     </div>
 
-    
     <div id="lessons-container">
     </div>
 </div>
@@ -59,19 +59,6 @@
     const currentYear = new Date().getFullYear();
     document.getElementById('year-display').innerText = currentYear;
     document.getElementById('copy-year').innerText = currentYear;
-
-    function toggleMode() {
-        const body = document.body;
-        const btn = document.getElementById('mode-toggle-btn');
-        
-        body.classList.toggle('dark-mode');
-        
-        if (body.classList.contains('dark-mode')) {
-            btn.innerHTML = "☀️ Light Mode";
-        } else {
-            btn.innerHTML = "🌙 Dark Mode";
-        }
-    }
 </script>
 <script src="script.js"></script>
 <script src="images.js"></script>
