@@ -135,7 +135,7 @@ h1 {
     font-weight: 500;
     display: block;
     padding: 10px 14px;
-    background: #161617; /* Dark list item background */
+    background: #161617;
     border-radius: 10px;
     transition: all 0.2s ease;
     border: 0.5px solid transparent;
@@ -144,7 +144,7 @@ h1 {
 .toc-list li a:hover, 
 .toc-list li a:active {
     background: var(--gold-accent) !important;
-    color: #161617 !important; /* Gold පසුබිම මත තද පැහැති අකුරු */
+    color: #161617 !important;
     font-weight: 600;
 }
 
@@ -194,7 +194,7 @@ h1 {
 .audio-title {
     font-size: 14px;
     font-weight: 600;
-    color: var(--gold-accent); /* ලස්සන Gold පැහැය */
+    color: var(--gold-accent);
     margin-bottom: 8px;
 }
 
@@ -203,12 +203,11 @@ audio {
     height: 40px;
     border-radius: 10px;
     margin-bottom: 4px;
-    /* Audio Player එක Matte Dark තීම් එකට ගැළපීම */
     filter: invert(0.9) hue-rotate(180deg) brightness(0.8) contrast(1.2) !important;
 }
 
 /* ==========================================================================
-   8. Image Optimization (Simple Dark & Clear Style)
+   8. Image Optimization
    ========================================================================= */
 .lesson-img {
     width: 100% !important;
@@ -218,18 +217,14 @@ audio {
     display: block !important;
     margin: 14px auto !important;
     box-sizing: border-box !important;
-    
-    /* 👁️ පින්තූරය අපැහැදිලි වෙන්නේ නැතිව, ඇසට පහසු වෙන්න Brightness එක විතරක් පොඩ්ඩක් අඩු කළා */
     filter: brightness(0.75) contrast(1.05) !important;
-    
-    /* කිසිම පසුබිම් වර්ණයක් හෝ ඉන්වර්ට් එකක් නැත */
     background-color: transparent !important;
     border: none !important;
     padding: 0px !important;
 }
 
 /* ==========================================================================
-   9. Footer & Back To Top Button
+   9. Footer & Optimization (Fixed)
    ========================================================================== */
 .btn-container {
     display: flex;
@@ -257,7 +252,6 @@ audio {
     color: #161617;
 }
 
-/* Footer GitHub / External Links */
 footer a, .footer a, a[href*="github"], span a {
     color: var(--gold-accent) !important;
     text-decoration: none !important;
@@ -272,3 +266,13 @@ footer a:hover, .footer a:hover {
     color: var(--gold-tap) !important;
     text-decoration: underline !important;
 }
+
+/* පිරිසිදු කරන ලද Footer කොටස */
+.footer-container {
+    margin-top: 20px;
+    padding-bottom: 0px !important;
+    margin-bottom: -16px !important;
+    border: none !important; /* Border සම්පූර්ණයෙන්ම ඉවත් කළා */
+    padding-top: 0px !important; /* Padding ඉවත් කළා */
+   }
+       
