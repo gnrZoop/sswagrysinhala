@@ -1,22 +1,25 @@
+/* ==========================================================================
+   1. Root Variables (Fixed Premium Matte Dark Style)
+   ========================================================================== */
 :root {
-    --primary-color: #4a6fa5;
-    --bg-color: #f4f6f9;
-    --card-bg: #ffffff;
-    --text-color: #2d3748;
-    --accent-color: #e2e8f0;
+    --gold-accent: #c4b9a8;     /* Premium Gold */
+    --gold-tap: #adbf9e;        /* Soft Tap Green/Gold */
+    --bg-color: #111112;         /* Pitch Black / Matte Dark Background */
+    --card-bg: #1b1b1c;          /* Deep Surface Dark */
+    --inner-box-bg: #222224;    /* Slightly lighter box for lists */
+    --text-color: #e1e0db;       /* Soft White Text */
+    --accent-color: #262628;     /* Dark Charcoal Border */
+    --text-secondary: #8e8d8a;   /* Muted Slate Text */
+    --radius-ios: 14px;
 }
 
-/* 🌙 Dark Mode සඳහා වර්ණ තීරණය කිරීම */
-.dark-mode {
-    --bg-color: #121212;
-    --card-bg: #1e1e1e;
-    --text-color: #e0e0e0;
-    --accent-color: #333333;
-}
-
+/* ==========================================================================
+   2. Global Styles (Always Dark Mode)
+   ========================================================================== */
 * {
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
+    outline: none !important;
 }
 
 html {
@@ -24,80 +27,95 @@ html {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
     margin: 0;
-    padding: 10px;
+    padding: 16px 12px;
     line-height: 1.6;
-    transition: background-color 0.3s, color 0.3s;
+    -webkit-font-smoothing: antialiased;
+    background-image: radial-gradient(circle at top right, rgba(196, 185, 168, 0.04), transparent 50%);
+    background-attachment: fixed;
 }
 
 .container {
     max-width: 650px;
     margin: 0 auto;
-    padding-bottom: 50px;
+    padding-bottom: 60px;
 }
 
-/* 🌓 Toggle Button Styles */
-.mode-toggle-container {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 10px;
-}
-
-#mode-toggle-btn {
-    background-color: var(--card-bg);
-    color: var(--text-color);
-    border: 1px solid var(--accent-color);
-    padding: 8px 16px;
-    font-size: 13px;
-    font-weight: bold;
-    border-radius: 20px;
-    cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    transition: background-color 0.2s, color 0.2s;
-}
-
+/* ==========================================================================
+   3. Typography (Headings & Subtitles)
+   ========================================================================== */
 h1 {
-    font-size: 22px;
+    font-size: 24px;
     text-align: center;
     color: var(--text-color);
-    margin-top: 10px;
-    margin-bottom: 5px;
-}
-
-.dark-mode h1 {
-    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-top: 15px;
+    margin-bottom: 6px;
 }
 
 .subtitle {
     text-align: center;
-    font-size: 13px;
-    color: #718096;
-    margin-bottom: 20px;
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
     padding: 0 5px;
+    font-weight: 500;
 }
 
-.dark-mode .subtitle {
-    color: #a0aec0;
+/* ==========================================================================
+   4. Premium iOS Home Button Styles
+   ========================================================================== */
+.mode-toggle-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 12px;
 }
 
-/* පටුන ස්ටයිල්ස් */
+#home-btn {
+    background-color: var(--card-bg);
+    color: var(--gold-accent) !important;
+    border: 0.5px solid var(--accent-color);
+    padding: 8px 22px;
+    font-size: 13.5px;
+    font-weight: 600;
+    border-radius: 20px;
+    text-decoration: none !important;
+    cursor: pointer;
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.02), 0 4px 12px rgba(0,0,0,0.3);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    display: inline-block;
+}
+
+#home-btn:active {
+    transform: scale(0.95);
+    background-color: var(--accent-color);
+    color: var(--gold-tap) !important;
+}
+
+/* ==========================================================================
+   5. Table of Contents (පටුන කොටස)
+   ========================================================================== */
 .toc-box {
     background: var(--card-bg);
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    margin-bottom: 20px;
+    padding: 18px 16px;
+    border-radius: var(--radius-ios);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    border: 0.5px solid rgba(255, 255, 255, 0.02);
+    margin-bottom: 24px;
 }
 
 .toc-box h2 {
     margin-top: 0;
     font-size: 16px;
+    font-weight: 700;
     color: var(--text-color);
-    border-bottom: 1px solid var(--accent-color);
-    padding-bottom: 8px;
+    border-bottom: 0.5px solid var(--accent-color);
+    padding-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .toc-list {
@@ -107,65 +125,66 @@ h1 {
 }
 
 .toc-list li {
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
 .toc-list li a {
     text-decoration: none;
     color: var(--text-color);
-    font-size: 14px;
+    font-size: 14.5px;
+    font-weight: 500;
     display: block;
-    padding: 8px 10px;
-    background: var(--bg-color);
-    border-radius: 8px;
-    transition: background 0.2s;
+    padding: 10px 14px;
+    background: #161617; /* Dark list item background */
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    border: 0.5px solid transparent;
 }
 
-.toc-list li a:hover, .toc-list li a:active {
-    background: var(--accent-color);
-    color: #2b6cb0;
+.toc-list li a:hover, 
+.toc-list li a:active {
+    background: var(--gold-accent) !important;
+    color: #161617 !important; /* Gold පසුබිම මත තද පැහැති අකුරු */
+    font-weight: 600;
 }
 
-.dark-mode .toc-list li a:hover {
-    color: #63b3ed;
-}
-
-/* පාඩම් කාණ්ඩ */
+/* ==========================================================================
+   6. Lesson Sections (පාඩම් කාණ්ඩ)
+   ========================================================================== */
 .lesson-section {
     background: var(--card-bg);
-    padding: 15px 10px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    margin-top: 20px;
-    scroll-margin-top: 10px;
+    padding: 20px 16px;
+    border-radius: var(--radius-ios);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    border: 0.5px solid rgba(255, 255, 255, 0.02);
+    margin-top: 24px;
+    scroll-margin-top: 16px;
 }
 
 .lesson-section h3 {
-    font-size: 16px;
+    font-size: 17px;
+    font-weight: 700;
     color: var(--text-color);
     margin-top: 0;
-    margin-bottom: 6px;
-    padding: 0 5px;
+    margin-bottom: 8px;
 }
 
 .lesson-desc {
-    font-size: 12px;
-    color: #718096;
-    margin-bottom: 10px;
-    border-bottom: 2px solid var(--bg-color);
-    padding: 0 5px 8px 5px;
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    margin-bottom: 14px;
+    border-bottom: 0.5px solid var(--accent-color);
+    padding-bottom: 10px;
 }
 
-.dark-mode .lesson-desc {
-    color: #a0aec0;
-}
-
-/* ශ්‍රව්‍ය සහ රූප පේළි */
+/* ==========================================================================
+   7. Audio Items & Native Media Player
+   ========================================================================== */
 .audio-item {
     display: flex;
     flex-direction: column;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--bg-color);
+    padding: 14px 0;
+    border-bottom: 0.5px solid var(--accent-color);
 }
 
 .audio-item:last-of-type {
@@ -173,72 +192,83 @@ h1 {
 }
 
 .audio-title {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
-    color: #2b6cb0;
-    margin-bottom: 6px;
-    padding: 0 5px;
+    color: var(--gold-accent); /* ලස්සන Gold පැහැය */
+    margin-bottom: 8px;
 }
 
-.dark-mode .audio-title {
-    color: #63b3ed;
-}
-
-/* 🎧 Audio Player Styles */
 audio {
     width: 100%;
     height: 40px;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    padding: 0 5px;
-    transition: filter 0.3s ease; /* සුමටව ඩාර්ක් මෝඩ් වීමට */
+    border-radius: 10px;
+    margin-bottom: 4px;
+    /* Audio Player එක Matte Dark තීම් එකට ගැළපීම */
+    filter: invert(0.9) hue-rotate(180deg) brightness(0.8) contrast(1.2) !important;
 }
 
-/* 🎧 ඩාර්ක් මෝඩ් එකේදී Audio Player එක අඳුරු පාට (Dark) කිරීම */
-.dark-mode audio {
-    filter: invert(0.9) hue-rotate(180deg);
-}
-
-/* 🖼️ පින්තූර ස්ටයිල්ස් */
+/* ==========================================================================
+   8. Image Optimization (Simple Dark & Clear Style)
+   ========================================================================= */
 .lesson-img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    border-radius: 0px;
-    border: none;
-    background-color: #f8fafc;
-    display: block;
-    margin: 5px 0 0 0;
-    transition: filter 0.3s ease;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    border-radius: 12px !important;
+    display: block !important;
+    margin: 14px auto !important;
+    box-sizing: border-box !important;
+    
+    /* 👁️ පින්තූරය අපැහැදිලි වෙන්නේ නැතිව, ඇසට පහසු වෙන්න Brightness එක විතරක් පොඩ්ඩක් අඩු කළා */
+    filter: brightness(0.75) contrast(1.05) !important;
+    
+    /* කිසිම පසුබිම් වර්ණයක් හෝ ඉන්වර්ට් එකක් නැත */
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0px !important;
 }
 
-/* ඩාර්ක් මෝඩ් එකේදී පින්තූර වර්ණ ප්‍රතිලෝම කිරීම */
-.dark-mode .lesson-img {
-    filter: invert(1) hue-rotate(180deg); 
-    background-color: #121212;
-}
-
-/* ඉහළට යන බොත්තම */
+/* ==========================================================================
+   9. Footer & Back To Top Button
+   ========================================================================== */
 .btn-container {
     display: flex;
     justify-content: flex-end;
-    margin-top: 15px;
-    padding-top: 10px;
-    border-top: 1px dashed var(--accent-color);
-    padding-right: 5px;
+    margin-top: 20px;
+    padding-top: 12px;
+    border-top: 0.5px dashed var(--accent-color);
 }
 
 .top-btn {
-    background-color: var(--bg-color);
+    background-color: #161617;
     color: var(--text-color);
     text-decoration: none;
-    padding: 5px 12px;
-    font-size: 11px;
-    font-weight: 500;
+    padding: 6px 14px;
+    font-size: 11.5px;
+    font-weight: 600;
     border-radius: 20px;
-    transition: background 0.2s;
+    transition: all 0.2s ease;
+    border: 0.5px solid var(--accent-color);
 }
 
-.top-btn:hover, .top-btn:active {
-    background-color: var(--accent-color);
+.top-btn:hover, 
+.top-btn:active {
+    background-color: var(--gold-accent);
+    color: #161617;
+}
+
+/* Footer GitHub / External Links */
+footer a, .footer a, a[href*="github"], span a {
+    color: var(--gold-accent) !important;
+    text-decoration: none !important;
+    font-weight: 600;
+}
+
+footer a:visited, .footer a:visited, a[href*="github"]:visited {
+    color: var(--gold-accent) !important;
+}
+
+footer a:hover, .footer a:hover {
+    color: var(--gold-tap) !important;
+    text-decoration: underline !important;
 }
