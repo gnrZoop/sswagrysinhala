@@ -9,9 +9,9 @@
 <body>
 
 <div class="container" id="top">
-    <!-- 🌓 Toggle Button එක වෙනුවට අලුතින් දැමූ Home බටන් එක -->
+    <!-- මූලික Home බටන් එක -->
     <div class="mode-toggle-container">
-        <a href="http://gnrzoop.github.io/Japanyamu/" id="home-btn">Home</a>
+        <a href="https://gnrzoop.github.io/Japanyamu/" id="home-btn">Home</a>
     </div>
 
     <h1>農業技能測定試験</h1>
@@ -38,27 +38,27 @@
         </ul>
     </div>
 
+    <!-- පාඩම් ඇතුළත් වන ස්ථානය -->
     <div id="lessons-container">
     </div>
-</div>
-
-<div style="text-align: center; margin-top: 40px; margin-bottom: 20px; font-size: 14px; color: #555; border-top: 1px solid #ddd; padding-top: 20px;">
-    
-    <!-- 🏠 Home Button (ලස්සන මැට් ස්ටයිල් එකකින් සකසා ඇත) -->
-    <div style="margin-bottom: 20px;">
-        <a href="https://gnrzoop.github.io/Japanyamu/" style="display: inline-block; padding: 8px 24px; font-size: 13px; font-weight: bold; color: #262628; background-color: #c4b9a8; text-decoration: none; border-radius: 20px; transition: background 0.3s ease;">
-            Home
-        </a>
+    <div>
+        
+   
+    <!-- Footer වලට උඩින් Home Button එක -->
+    <div class="footer-home-btn" style="text-align: center; margin-top: 20px; margin-bottom: 5px;">
+        <a href="https://gnrzoop.github.io/Japanyamu/" id="home-btn">Home</a>
+    </div>
     </div>
 
-    <p style="margin: 5px 0;">SSW Agriculture Exam System | <span id="year-display">2026</span></p>
-    <a href="https://github.com/gnrzoop" target="_blank" style="text-decoration: none; color: #6750a4; font-weight: bold;">
+</div> <!-- .container වැසීම -->
+    <div style="text-align: center; margin-top: 15px; margin-bottom: 10px; font-size: 14px; color: #555; border-top: 1px solid #ddd; padding-top: 10px;">
+    <p style="margin: 0; font-weight: 500;">SSW Agriculture Exam System | <span id="year-display">2026</span></p>
+    <a href="https://github.com/gnrzoop" target="_blank" style="text-decoration: none; color: #6750a4; font-weight: bold; display: block; margin-top: 2px;">
         © <span id="copy-year">2026</span> gnrzoop | GitHub
     </a>
 </div>
 
 <script>
-    // වර්තමාන වර්ෂය ස්වයංක්‍රීයව යාවත්කාලීන කිරීම
     const currentYear = new Date().getFullYear();
     document.getElementById('year-display').innerText = currentYear;
     document.getElementById('copy-year').innerText = currentYear;
