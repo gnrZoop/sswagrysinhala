@@ -80,13 +80,13 @@ const lessonData = [
         items: [
             { track: "19", title: "ආහාර පාන (Food & Drinks)" },
             { track: "20", title: "නිවස සහ එදිනෙදා ද්‍රව්‍ය" },
-            { track: "21", title: "කෘෂිකාර්මික මෙවලම් (Agri-Tools)" },
+            { track: "21", title: "එදිනෙදා ක්‍රියාකාරකම්" },
             { track: "22", title: "ඇඳුම් පැළඳුම් (Clothes)" },
-            { track: "23", title: "කාර්යාලීය සහ ලිපිද්‍රව්‍ය" },
-            { track: "24", title: "වාහන සහ පොදු ස්ථාන" },
-            { track: "25", title: "ශරීර කොටස් (Body Parts)" },
-            { track: "26", title: "මිනිසුන් සහ පවුලේ සාමාජිකයන්" },
-            { track: "27", title: "කාලගුණය සහ සෘතු (Weather)" }
+            { track: "23", title: "කෘෂිකාර්මික මෙවලම් (Agri-Tools)" },
+            { track: "24", title: "වෙනත්" },
+            { track: "25", title: "කාර්යාලීය සහ ලිපිද්‍රව්‍ය" },
+            { track: "26", title: "වාහන සහ පොදු ස්ථාන" },
+            { track: "27", title: "ශරීර කොටස් (Body Parts)" }
         ]
     },
     {
@@ -127,7 +127,7 @@ const lessonData = [
     {
         id: "adjectives",
         title: "🎨 5. නාම විශේෂණ (Adjectives)",
-        desc: "ද්‍රව්‍ය සහ තත්ත්වයන් විස්තර කිරීමට යොදාගන්නා い සහ な නාම විශේෂණ.",
+        desc: "ද්‍රව්‍ය සහ තත්ත්වයන් ඒවිස්තර කිරීමට යොදාගන්නා い සහ な නාම විශේෂණ.",
         items: [
             { track: "42", title: "い (I) නාම විශේෂණ - කාණ්ඩය 1" },
             { track: "43", title: "い (I) නාම විශේෂණ - කාණ්ඩය 2" },
