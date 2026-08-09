@@ -80,8 +80,8 @@ const lessonData = [
         items: [
             { track: "19", title: "ආහාර පාන (Food & Drinks)" },
             { track: "20", title: "නිවස සහ එදිනෙදා ද්‍රව්‍ය" },
-            { track: "21", title: "ඇඳුම් පැළඳුම් (Clothes)" },
-            { track: "22", title: "කෘෂිකාර්මික මෙවලම් (Agri-Tools)" },
+            { track: "21", title: "කෘෂිකාර්මික මෙවලම් (Agri-Tools)" },
+            { track: "22", title: "ඇඳුම් පැළඳුම් (Clothes)" },
             { track: "23", title: "කාර්යාලීය සහ ලිපිද්‍රව්‍ය" },
             { track: "24", title: "වාහන සහ පොදු ස්ථාන" },
             { track: "25", title: "ශරීර කොටස් (Body Parts)" },
