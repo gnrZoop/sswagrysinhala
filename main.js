@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
             : allExerciseData.filter(ex => ex.category === category);
 
         if (filtered.length === 0) {
-            container.innerHTML = `<p style="text-align:center;color:var(--text-secondary);padding:40px;">මෙම කාණ්ඩය සඳහා අභ්‍යාස නොමැත.</p>`;
+            container.innerHTML = `<p style="text-align:center;color:var(--text-secondary);padding:40px;">මෙම කාණ්ඩය සඳහා තවම අභ්‍යාස සකසා නොමැත.</p>`;
             return;
         }
 
