@@ -204,3 +204,39 @@ document.addEventListener("DOMContentLoaded", () => {
         container.appendChild(sectionDiv);
     });
 });
+// ============================================================
+//  AUDIO CONTROL: එකවර එක් ගොනුවක් පමණක් වාදනය වීමට
+// ============================================================
+(function() {
+    // පිටුවේ ඇති සියලුම audio මූලද්රව්ය ලබා ගැනීමට ෆෝන්ෂන් එකක්
+    function setupAudioController() {
+        const allAudios = document.querySelectorAll('audio');
+        
+        if (allAudios.length === 0) return;
+
+        allAudios.forEach(function(currentAudio) {
+            // 'play' සිදුවීම සවන් දෙන්න
+            currentAudio.addEventListener('play', function() {
+                // වත්මන් ගොනුව හැර අනෙකුත් සියල්ල නවත්වන්න
+                allAudios.forEach(function(otherAudio) {
+                    if (otherAudio !== currentAudio && !otherAudio.paused) {
+                        otherAudio.pause();
+                        // අවශ්‍ය නම් ආරම්භයට ගෙන යන්න (විකල්ප)
+                        // otherAudio.currentTime = 0; 
+                    }
+                });
+            });
+        });
+    }
+
+    // පිටුව සම්පූර්ණයෙන් පූරණය වූ පසු හෝ නව පාඩම් එකතු වූ පසු ක්‍රියාත්මක වීමට
+    if (document.readyState === 'complete') {
+        setupAudioController();
+    } else {
+        document.addEventListener('readystatechange', function() {
+            if (document.readyState === 'complete') {
+                setupAudioController();
+            }
+        });
+    }
+})();
