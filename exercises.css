@@ -1,0 +1,310 @@
+/* ============================================================
+   EXERCISES STYLES - අභ්‍යාස සඳහා විශේෂිත ෛලී
+   ============================================================ */
+
+.exercise-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+    padding: 8px;
+    background: var(--card-bg);
+    border-radius: var(--radius-ios);
+    border: 0.5px solid rgba(255, 255, 255, 0.02);
+    justify-content: center;
+}
+
+.ex-nav-btn {
+    background: var(--inner-box-bg);
+    color: var(--text-secondary);
+    border: 0.5px solid var(--accent-color);
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    white-space: nowrap;
+}
+
+.ex-nav-btn:hover {
+    background: var(--accent-color);
+    color: var(--text-color);
+}
+
+.ex-nav-btn.active {
+    background: var(--gold-accent);
+    color: #161617;
+    border-color: var(--gold-accent);
+}
+
+.exercise-card {
+    background: var(--card-bg);
+    border-radius: var(--radius-ios);
+    padding: 20px 16px;
+    margin-bottom: 20px;
+    border: 0.5px solid rgba(255, 255, 255, 0.02);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    scroll-margin-top: 16px;
+}
+
+.exercise-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    border-bottom: 0.5px solid var(--accent-color);
+    padding-bottom: 8px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.exercise-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--gold-accent);
+}
+
+.exercise-badge {
+    background: var(--accent-color);
+    color: var(--text-secondary);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 12px;
+    border-radius: 12px;
+    letter-spacing: 0.5px;
+}
+
+.exercise-desc {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+}
+
+/* ============================================================
+   GRID LAYOUT - ප්‍රශ්න තුන බැගින් වමේ ඉඳන් දකුණට
+   ============================================================ */
+.questions-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.question-item.grid-item {
+    background: var(--inner-box-bg);
+    border-radius: 10px;
+    padding: 12px 12px 8px 12px;
+    margin-bottom: 0;
+    border-left: 3px solid var(--accent-color);
+    transition: border-color 0.3s ease;
+}
+
+.question-item.grid-item.correct {
+    border-left-color: #4caf50;
+}
+
+.question-item.grid-item.wrong {
+    border-left-color: #f44336;
+}
+
+.question-item.grid-item .question-text {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: var(--text-color);
+}
+
+.question-item.grid-item .answer-select {
+    width: 100%;
+    padding: 6px 8px;
+    font-size: 13px;
+    background: var(--bg-color);
+    border: 0.5px solid var(--accent-color);
+    border-radius: 6px;
+    color: var(--text-color);
+    outline: none;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+    font-family: inherit;
+    cursor: pointer;
+    appearance: auto;
+}
+
+.question-item.grid-item .answer-select:focus {
+    border-color: var(--gold-accent);
+}
+
+.question-item.grid-item .result-message {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 6px;
+    margin-top: 4px;
+    display: none;
+}
+
+.question-item.grid-item .result-message.show {
+    display: block;
+}
+
+.question-item.grid-item .result-message.pass {
+    background: rgba(76, 175, 80, 0.15);
+    color: #81c784;
+    border: 0.5px solid #4caf50;
+}
+
+.question-item.grid-item .result-message.fail {
+    background: rgba(244, 67, 54, 0.15);
+    color: #ef9a9a;
+    border: 0.5px solid #f44336;
+}
+
+@media (max-width: 600px) {
+    .questions-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 400px) {
+    .questions-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.submit-btn {
+    background: var(--gold-accent);
+    color: #161617;
+    border: none;
+    padding: 8px 24px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.submit-btn:hover {
+    background: var(--gold-tap);
+    transform: scale(0.97);
+}
+
+.submit-btn:active {
+    transform: scale(0.94);
+}
+
+.result-message {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 8px;
+    display: none;
+}
+
+.result-message.show {
+    display: block;
+}
+
+.result-message.pass {
+    background: rgba(76, 175, 80, 0.15);
+    color: #81c784;
+    border: 0.5px solid #4caf50;
+}
+
+.result-message.fail {
+    background: rgba(244, 67, 54, 0.15);
+    color: #ef9a9a;
+    border: 0.5px solid #f44336;
+}
+/* ============================================================
+   GRID LAYOUT - ප්‍රශ්න තුන බැගින් වමේ ඉඳන් දකුණට
+   ============================================================ */
+.questions-container {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 12px !important;
+}
+
+.question-item.grid-item {
+    background: var(--inner-box-bg);
+    border-radius: 10px;
+    padding: 12px 12px 8px 12px;
+    margin-bottom: 0 !important;
+    border-left: 3px solid var(--accent-color);
+    transition: border-color 0.3s ease;
+}
+
+.question-item.grid-item .question-text {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: var(--text-color);
+}
+
+.question-item.grid-item .answer-select {
+    width: 100%;
+    padding: 6px 8px;
+    font-size: 13px;
+    background: var(--bg-color);
+    border: 0.5px solid var(--accent-color);
+    border-radius: 6px;
+    color: var(--text-color);
+    outline: none;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+    font-family: inherit;
+    cursor: pointer;
+    appearance: auto;
+}
+
+.question-item.grid-item .result-message {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 6px;
+    margin-top: 4px;
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .questions-container {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .questions-container {
+        grid-template-columns: 1fr !important;
+    }
+}
+/* ============================================================
+   GRID LAYOUT - ප්‍රශ්න තුන බැගින් වමේ ඉඳන් දකුණට
+   ============================================================ */
+.questions-container {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 12px !important;
+}
+
+.question-item.grid-item {
+    background: var(--inner-box-bg);
+    border-radius: 10px;
+    padding: 12px 12px 8px 12px;
+    margin-bottom: 0 !important;
+    border-left: 3px solid var(--accent-color);
+    transition: border-color 0.3s ease;
+}
+
+@media (max-width: 600px) {
+    .questions-container {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .questions-container {
+        grid-template-columns: 1fr !important;
+    }
+}

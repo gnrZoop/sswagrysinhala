@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>れんしゅう අභ්‍යාස - SSW ජපන් පෙළ පොත</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="exercises.css">
+</head>
+<body>
+    <div class="container" id="top">
+        <!-- Home Button -->
+        <div class="mode-toggle-container">
+            <a href="http://gnrzoop.github.io/sswagry/" id="home-btn">🏠 Home</a>
+        </div>
+
+        <h1>📝 れんしゅう අභ්‍යාස</h1>
+        <div class="subtitle">කෘෂිකාර්මික කුසලතා ඇගයීම් පරීක්ෂණය - පුහුණු ප්‍රශ්න</div>
+
+        <!-- Navigation Buttons -->
+        <div class="exercise-nav">
+            <button class="ex-nav-btn active" data-ex="all">📚 සියල්ල</button>
+            <button class="ex-nav-btn" data-ex="hiragana">🔤 අක්ෂර</button>
+            <button class="ex-nav-btn" data-ex="numbers">🔢 ඉලක්කම්</button>
+            <button class="ex-nav-btn" data-ex="time">🕒 වේලාව</button>
+            <button class="ex-nav-btn" data-ex="calendar">📅 දින දර්ශනය</button>
+            <button class="ex-nav-btn" data-ex="counting">📊 ගණන් කිරීම</button>
+            <button class="ex-nav-btn" data-ex="nouns">🍎 නාමපද</button>
+            <button class="ex-nav-btn" data-ex="kosoado">📍 කෝ-සෝ-අ-ඩො</button>
+            <button class="ex-nav-btn" data-ex="places">🏢 ස්ථාන</button>
+            <button class="ex-nav-btn" data-ex="verbs">🏃 ක්‍රියාපද</button>
+            <button class="ex-nav-btn" data-ex="adjectives">🎨 නාම විශේෂණ</button>
+            <button class="ex-nav-btn" data-ex="questions">❓ ප්‍රශ්න</button>
+        </div>
+
+        <!-- Exercises Container -->
+        <div id="exercises-container">
+            <p style="text-align:center;color:var(--text-secondary);padding:40px;">⏳ පූරණය වෙමින්...</p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer-container">
+            <div style="text-align: center; margin-top: 20px; margin-bottom: 5px;">
+                <a href="http://gnrzoop.github.io/sswagry/" id="home-btn">🏠 Home</a>
+            </div>
+            <div style="text-align: center; margin-top: 15px; margin-bottom: 10px; font-size: 14px; color: #555; border-top: 1px solid #ddd; padding-top: 10px;">
+                <p style="margin: 0; font-weight: 500;">SSW Agriculture Exam System | <span id="year-display">2026</span></p>
+                <a href="https://github.com/gnrzoop" target="_blank" style="text-decoration: none; color: #6750a4; font-weight: bold; display: block; margin-top: 2px;">
+                    © <span id="copy-year">2026</span> gnrzoop | GitHub
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== සියලුම JavaScript Files - එකම ෆෝල්ඩරයේ ===== -->
+    <!-- 1. පළමුව Data Files -->
+    <script src="data-hiragana.js"></script>
+    <script src="data-katakana.js"></script>
+    <script src="data-numbers.js"></script>
+    <script src="data-time.js"></script>
+    <script src="data-calendar.js"></script>
+    <script src="data-timewords.js"></script>
+    <script src="data-counting.js"></script>
+    <script src="data-nouns.js"></script>
+    <script src="data-kosoado.js"></script>
+    <script src="data-places.js"></script>
+    <script src="data-verbs.js"></script>
+    <script src="data-adjectives.js"></script>
+    <script src="data-questions.js"></script>
+    <!-- 2. අවසානයේ Main Controller -->
+    <script src="main.js"></script>
+
+    <script>
+        const currentYear = new Date().getFullYear();
+        document.getElementById('year-display').innerText = currentYear;
+        document.getElementById('copy-year').innerText = currentYear;
+    </script>
+</body>
+</html>
