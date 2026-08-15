@@ -6,27 +6,144 @@
     <title>れんしゅう අභ්‍යාස - SSW ජපන් පෙළ පොත</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="exercises.css">
+    <style>
+        /* ජපන් අකුරු නිවැරදිව පෙන්වීමට */
+        body, .exercise-title, .question-text, .option-label, .answer-select, .exercise-desc {
+            font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", "Meiryo", "MS Gothic", sans-serif !important;
+        }
+        .jp-text {
+            font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", "Meiryo", "MS Gothic", sans-serif !important;
+        }
+        .answer-select option {
+            font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", "Meiryo", "MS Gothic", sans-serif !important;
+        }
+        .radio-group .option-label {
+            font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", "Meiryo", "MS Gothic", sans-serif !important;
+        }
+
+        /* ===== FOOTER NAVIGATION BAR ===== */
+        .footer-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-top: 20px;
+            padding: 10px 16px;
+            background: var(--card-bg);
+            border-radius: var(--radius-ios);
+            border: 0.5px solid var(--accent-color);
+            flex-wrap: wrap;
+        }
+
+        .footer-nav-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .footer-nav-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Menu Button */
+        .footer-menu-btn {
+            background: var(--inner-box-bg);
+            color: var(--text-color);
+            border: 0.5px solid var(--accent-color);
+            padding: 6px 16px;
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .footer-menu-btn:hover {
+            background: var(--gold-accent);
+            color: #161617;
+            border-color: var(--gold-accent);
+        }
+
+        /* Arrow Buttons */
+        .footer-arrow-btn {
+            background: var(--inner-box-bg);
+            color: var(--text-secondary);
+            border: 0.5px solid var(--accent-color);
+            padding: 6px 12px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .footer-arrow-btn:hover {
+            background: var(--gold-accent);
+            color: #161617;
+            border-color: var(--gold-accent);
+        }
+
+        .footer-arrow-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        /* Category Label */
+        .footer-category-label {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            padding: 0 4px;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .footer-nav {
+                padding: 6px 10px;
+            }
+            .footer-menu-btn {
+                font-size: 12px;
+                padding: 4px 12px;
+            }
+            .footer-arrow-btn {
+                font-size: 14px;
+                padding: 4px 10px;
+                min-width: 34px;
+            }
+            .footer-category-label {
+                font-size: 11px;
+            }
+        }
+    </style>
 </head>
 <body>
+    
     <div class="container" id="top">
-        <!-- Home Button -->
+        <!-- Home Button (උඩම) -->
         <div class="mode-toggle-container">
             <a href="http://gnrzoop.github.io/sswagry/" id="home-btn">🏠 Home</a>
         </div>
 
         <div style="background-color: #2b2118; border: 1px solid #4a3b2b; color: #ffc107; padding: 12px 16px; border-radius: 8px; font-family: sans-serif; font-size: 14px; line-height: 1.6; margin-bottom: 15px;">
-    ⚠️ කොටස් සියල්ල සම්පූර්ණ කර නොමැත.
-</div>
-  
-
-
-        <h1>📝 れんしゅう අභ්‍යාස</h1>
+            ⚠️ මෙය අත්හදා බැලීම මට්ටමේ පවතින අතර සම්පූර්ණ කොටස් ඇතුලත් කර නොමැත.
+        </div>
+        
+        <h1>📝 れんしゅう</h1>
         <div class="subtitle">කෘෂිකාර්මික කුසලතා ඇගයීම් පරීක්ෂණය - පුහුණු ප්‍රශ්න</div>
 
-        <!-- Navigation Buttons -->
+        <!-- Navigation Buttons (උඩම - "සියල්ල" ඉවත් කර ඇත) -->
         <div class="exercise-nav">
-            <button class="ex-nav-btn active" data-ex="all">📚 සියල්ල</button>
-            <button class="ex-nav-btn" data-ex="hiragana">🔤 අක්ෂර</button>
+            <button class="ex-nav-btn active" data-ex="hiragana">🔤 අක්ෂර</button>
             <button class="ex-nav-btn" data-ex="numbers">🔢 ඉලක්කම්</button>
             <button class="ex-nav-btn" data-ex="time">🕒 වේලාව</button>
             <button class="ex-nav-btn" data-ex="calendar">📅 දින දර්ශනය</button>
@@ -44,11 +161,23 @@
             <p style="text-align:center;color:var(--text-secondary);padding:40px;">⏳ පූරණය වෙමින්...</p>
         </div>
 
+        <!-- ===== FOOTER NAVIGATION ===== -->
+        <div class="footer-nav">
+            <div class="footer-nav-left">
+                <!-- Menu Button -->
+                <button class="footer-menu-btn" id="footerMenuBtn" onclick="toggleFooterMenu()">
+                    ☰ Menu
+                </button>
+                <span class="footer-category-label" id="footerCategoryLabel">🔤 අක්ෂර</span>
+            </div>
+            <div class="footer-nav-right">
+                <button class="footer-arrow-btn" id="footerPrevBtn" onclick="footerNavigateCategory(-1)">◀</button>
+                <button class="footer-arrow-btn" id="footerNextBtn" onclick="footerNavigateCategory(1)">▶</button>
+            </div>
+        </div>
+
         <!-- Footer -->
         <div class="footer-container">
-            <div style="text-align: center; margin-top: 20px; margin-bottom: 5px;">
-                <a href="http://gnrzoop.github.io/sswagry/" id="home-btn">🏠 Home</a>
-            </div>
             <div style="text-align: center; margin-top: 15px; margin-bottom: 10px; font-size: 14px; color: #555; border-top: 1px solid #ddd; padding-top: 10px;">
                 <p style="margin: 0; font-weight: 500;">SSW Agriculture Exam System | <span id="year-display">2026</span></p>
                 <a href="https://github.com/gnrzoop" target="_blank" style="text-decoration: none; color: #6750a4; font-weight: bold; display: block; margin-top: 2px;">
@@ -58,13 +187,11 @@
         </div>
     </div>
 
-    <!-- ===== සියලුම JavaScript Files - එකම ෆෝල්ඩරයේ ===== -->
-    <!-- 1. පළමුව Data Files -->
+    <!-- ===== JavaScript Files ===== -->
     <script src="data-hiragana.js"></script>
     <script src="data-katakana.js"></script>
     <script src="data-numbers.js"></script>
     <script src="data-time.js"></script>
-    <script src="data-calendar.js"></script>
     <script src="data-timewords.js"></script>
     <script src="data-counting.js"></script>
     <script src="data-nouns.js"></script>
@@ -73,13 +200,97 @@
     <script src="data-verbs.js"></script>
     <script src="data-adjectives.js"></script>
     <script src="data-questions.js"></script>
-    <!-- 2. අවසානයේ Main Controller -->
     <script src="main.js"></script>
 
     <script>
         const currentYear = new Date().getFullYear();
         document.getElementById('year-display').innerText = currentYear;
         document.getElementById('copy-year').innerText = currentYear;
+
+        // ============================================================
+        //  FOOTER NAVIGATION CONTROLS
+        // ============================================================
+        const footerCategoryButtons = document.querySelectorAll('.ex-nav-btn');
+        const footerCategoryLabels = {
+            'hiragana': '🔤 අක්ෂර',
+            'numbers': '🔢 ඉලක්කම්',
+            'time': '🕒 වේලාව',
+            'calendar': '📅 දින දර්ශනය',
+            'counting': '📊 ගණන් කිරීම',
+            'nouns': '🍎 නාමපද',
+            'kosoado': '📍 කෝ-සෝ-අ-ඩො',
+            'places': '🏢 ස්ථාන',
+            'verbs': '🏃 ක්‍රියාපද',
+            'adjectives': '🎨 නාම විශේෂණ',
+            'questions': '❓ ප්‍රශ්න'
+        };
+        const footerCategoryKeys = Object.keys(footerCategoryLabels);
+        let footerCurrentIndex = 0;
+
+        function getFooterCurrentCategory() {
+            return footerCategoryKeys[footerCurrentIndex];
+        }
+
+        function updateFooterCategoryLabel() {
+            const key = getFooterCurrentCategory();
+            document.getElementById('footerCategoryLabel').textContent = footerCategoryLabels[key] || key;
+            document.getElementById('footerPrevBtn').disabled = footerCurrentIndex === 0;
+            document.getElementById('footerNextBtn').disabled = footerCurrentIndex === footerCategoryKeys.length - 1;
+        }
+
+        function footerNavigateCategory(direction) {
+            const newIndex = footerCurrentIndex + direction;
+            if (newIndex < 0 || newIndex >= footerCategoryKeys.length) return;
+            footerCurrentIndex = newIndex;
+            const category = getFooterCurrentCategory();
+            
+            footerCategoryButtons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.ex === category) {
+                    btn.classList.add('active');
+                    btn.click();
+                }
+            });
+            updateFooterCategoryLabel();
+            
+            // පිටුවේ උඩට යන්න (scroll to top)
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleFooterMenu() {
+            const nav = document.querySelector('.exercise-nav');
+            if (nav.style.display === 'none') {
+                nav.style.display = 'flex';
+                // Menu එක ඔබුවාම පිටුවේ උඩට යන්න
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                nav.style.display = 'none';
+            }
+        }
+
+        // Update label when nav buttons are clicked
+        footerCategoryButtons.forEach((btn) => {
+            btn.addEventListener('click', function() {
+                const category = this.dataset.ex;
+                const idx = footerCategoryKeys.indexOf(category);
+                if (idx !== -1) {
+                    footerCurrentIndex = idx;
+                    updateFooterCategoryLabel();
+                }
+            });
+        });
+
+        // Initial setup - first category active
+        setTimeout(() => {
+            // Make first category active
+            footerCategoryButtons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.ex === 'hiragana') {
+                    btn.classList.add('active');
+                }
+            });
+            updateFooterCategoryLabel();
+        }, 200);
     </script>
 </body>
 </html>

@@ -18,62 +18,72 @@ const hiraganaData = [
                 id: 'q1', 
                 question: '① ただしい ひらがなは どれですか。', 
                 options: ['かも', 'かま', 'がま', 'かよ'], 
-                correct: 1 
+                correct: 1 ,
+                type: 'radio'
             },
             { 
                 id: 'q2', 
                 question: '② ただしい ひらがなは どれですか。', 
                 options: ['ほきみ', 'さきみ', 'はさみ', 'はきみ'], 
-                correct: 2  // 'はさみ' නිවැරදියි
+                correct: 2,
+                type: 'radio'  // 'はさみ' නිවැරදියි
             },
             { 
                 id: 'q3', 
                 question: '③ ただしい ひらがなは どれですか。', 
                 options: ['ふしち', 'ふくら', 'ふころ', 'ふくろ'], 
-                correct: 3 
+                correct: 3 ,
+                type: 'radio'
             },
             { 
                 id: 'q4', 
                 question: '④ ただしい ひらがなは どれですか。', 
-                options: ['たまご', 'たまこ', 'なもご', 'たもご'], 
-                correct: 0 
+                options: ['たまご', 'たまご', 'なもご', 'たもご'], 
+                correct: 0 ,
+                type: 'radio' 
             },
             { 
                 id: 'q5', 
                 question: '⑤ ただしい ひらがなは どれですか。', 
                 options: ['しくった', 'くしった', 'くつした', 'つくした'], 
-                correct: 2 
+                correct: 2 ,
+                type: 'radio'
             },
             // ========== කතකන ප්‍රශ්න (6-10) ==========
             { 
                 id: 'q6', 
                 question: '⑥ ただしい カタカナは どれですか。', 
                 options: ['パズ', 'パス', 'バス', 'バズ'], 
-                correct: 2 
+                correct: 2 ,
+                type: 'radio'
             },
             { 
                 id: 'q7', 
                 question: '⑦ ただしい カタカナは どれですか。', 
                 options: ['ハウス', 'ハワス', 'バウス', 'バワス'], 
-                correct: 0 
+                correct: 0 ,
+                type: 'radio'
             },
             { 
                 id: 'q8', 
                 question: '⑧ ただしい カタカナは どれですか。', 
                 options: ['バカツ', 'バケシ', 'バケツ', 'バカシ'], 
-                correct: 2 
+                correct: 2 ,
+                type: 'radio'
             },
             { 
                 id: 'q9', 
                 question: '⑨ ただしい カタカナは どれですか。', 
                 options: ['スープン', 'スプーン', 'スプンー', 'スップン'], 
-                correct: 1 
+                correct: 1 ,
+                type: 'radio'
             },
             { 
                 id: 'q10', 
                 question: '⑩ ただしい カタカナは どれですか。', 
                 options: ['トフッタ', 'トラッタ', 'トフック', 'トラック'], 
-                correct: 3 
+                correct: 3 ,
+                type: 'radio'
             }
         ]
     }

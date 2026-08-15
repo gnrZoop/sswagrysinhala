@@ -2,6 +2,7 @@
 //  NOUNS EXERCISES - data-nouns.js
 //  ට්‍රැක් 32 - නාමපද (කොටස් 2, එකම කාඩ්පත)
 //  Dropdown එකෙන් A-H තෝරන්න
+//  සෑම ප්‍රශ්නයකටම Image එකතු කර ඇත
 // ============================================================
 
 const nounsData = [
@@ -15,7 +16,7 @@ const nounsData = [
         description: ``,
         track: '32',
         type: 'choice',
-        image: '32.webp',
+        image: null,
         questions: [
             // =============================================
             // කොටස 1 - ප්‍රශ්න 1-6 (A-H)
@@ -24,37 +25,43 @@ const nounsData = [
                 id: 'n1', 
                 question: 'කොටස 1 - ප්‍රශ්න 1.', 
                 options: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
-                correct: 5
+                correct: 5,
+                image: '32.webp'
             },
             { 
                 id: 'n2', 
                 question: 'කොටස 1 - ප්‍රශ්න 2.', 
                 options: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
-                correct: 3
+                correct: 3,
+                image: '32.webp'
             },
             { 
                 id: 'n3', 
                 question: 'කොටස 1 - ප්‍රශ්න 3.', 
                 options: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
-                correct: 0
+                correct: 0,
+                image: '32.webp'
             },
             { 
                 id: 'n4', 
                 question: 'කොටස 1 - ප්‍රශ්න 4.', 
                 options: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
-                correct: 6
+                correct: 6,
+                image: '32.webp'
             },
             { 
                 id: 'n5', 
                 question: 'කොටස 1 - ප්‍රශ්න 5.', 
                 options: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
-                correct: 7
+                correct: 7,
+                image: '32.webp'
             },
             { 
                 id: 'n6', 
                 question: 'කොටස 1 - ප්‍රශ්න 6.', 
                 options: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
-                correct: 1
+                correct: 1,
+                image: '32.webp'
             },
             // =============================================
             // කොටස 2 - ප්‍රශ්න 1-6 (A-H)
@@ -63,37 +70,43 @@ const nounsData = [
                 id: 'n7', 
                 question: 'කොටස 2 - ප්‍රශ්න 1.', 
                 options: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
-                correct: 1
+                correct: 1,
+                image: '32.webp'
             },
             { 
                 id: 'n8', 
                 question: 'කොටස 2 - ප්‍රශ්න 2.', 
                 options: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
-                correct: 6
+                correct: 6,
+                image: '32.webp'
             },
             { 
                 id: 'n9', 
                 question: 'කොටස 2 - ප්‍රශ්න 3.', 
                 options: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
-                correct: 0
+                correct: 0,
+                image: '32.webp'
             },
             { 
                 id: 'n10', 
                 question: 'කොටස 2 - ප්‍රශ්න 4.', 
                 options: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
-                correct: 3
+                correct: 3,
+                image: '32.webp'
             },
             { 
                 id: 'n11', 
                 question: 'කොටස 2 - ප්‍රශ්න 5.', 
                 options: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
-                correct: 5
+                correct: 5,
+                image: '32.webp'
             },
             { 
                 id: 'n12', 
                 question: 'කොටස 2 - ප්‍රශ්න 6.', 
                 options: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
-                correct: 4
+                correct: 4,
+                image: '32.webp'
             }
         ]
     }

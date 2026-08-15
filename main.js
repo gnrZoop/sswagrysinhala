@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
             : allExerciseData.filter(ex => ex.category === category);
 
         if (filtered.length === 0) {
-            container.innerHTML = `<p style="text-align:center;color:var(--text-secondary);padding:40px;">මෙම කාණ්ඩය සඳහා තවම අභ්‍යාස සකසා නොමැත.</p>`;
+            container.innerHTML = `<p style="text-align:center;color:var(--text-secondary);padding:40px;">මෙම කාණ්ඩය සඳහා තවම අභ්‍යාස සකසා නොමැත</p>`;
             return;
         }
 
@@ -146,58 +146,100 @@ document.addEventListener('DOMContentLoaded', function() {
             qDiv.className = 'question-item grid-item';
             qDiv.dataset.questionId = q.id;
 
+            // =============================================
+            // ප්‍රශ්නයට අදාළ Image එක (q.image අනුව)
+            // =============================================
+            if (q.image !== null && q.image !== false && q.image !== undefined) {
+                const imgWrapper = document.createElement('div');
+                imgWrapper.style.cssText = `
+                    margin-bottom: 10px;
+                    border-radius: 8px;
+                    overflow: hidden;
+                    background: var(--inner-box-bg);
+                    border: 0.5px solid var(--accent-color);
+                `;
+
+                const img = document.createElement('img');
+                img.className = 'lesson-img';
+                img.src = q.image;
+                img.alt = `Question ${qIndex + 1} image`;
+                img.loading = 'lazy';
+                img.style.cssText = `
+                    width: 100%;
+                    height: auto;
+                    display: block;
+                    filter: brightness(0.75) contrast(1.05) !important;
+                `;
+                imgWrapper.appendChild(img);
+                qDiv.appendChild(imgWrapper);
+            }
+
             const qText = document.createElement('div');
             qText.className = 'question-text';
-            qText.textContent = `${qIndex + 1}. ${q.question}`;
+            qText.textContent = `${q.question}`;
             qDiv.appendChild(qText);
 
             if (isChoice) {
-                // Dropdown select element
-                const select = document.createElement('select');
-                select.className = 'answer-select';
-                select.name = q.id;
-                select.style.cssText = `
-                    width: 100%;
-                    padding: 6px 8px;
-                    font-size: 13px;
-                    background: var(--bg-color);
-                    border: 0.5px solid var(--accent-color);
-                    border-radius: 6px;
-                    color: var(--text-color);
-                    outline: none;
-                    transition: border-color 0.3s ease;
-                    box-sizing: border-box;
-                    font-family: inherit;
-                    cursor: pointer;
-                    appearance: auto;
-                `;
+                // q.type අනුව Radio හෝ Dropdown
+                if (q.type === 'radio') {
+                    // Radio buttons
+                    const optionsDiv = document.createElement('div');
+                    optionsDiv.className = 'options radio-group';
 
-                // Default option
-                const defaultOption = document.createElement('option');
-                defaultOption.value = '';
-                defaultOption.textContent = '-- තෝරන්න --';
-                defaultOption.disabled = true;
-                defaultOption.selected = true;
-                select.appendChild(defaultOption);
+                    const shuffledOptions = shuffleArray([...q.options]);
+                    const newCorrectIndex = shuffledOptions.indexOf(q.options[q.correct]);
 
-                q.options.forEach((opt, optIndex) => {
-                    const option = document.createElement('option');
-                    option.value = optIndex;
-                    option.textContent = opt;
-                    if (optIndex === q.correct) {
-                        option.dataset.correct = 'true';
-                    }
-                    select.appendChild(option);
-                });
+                    shuffledOptions.forEach((opt, optIndex) => {
+                        const label = document.createElement('label');
+                        label.className = 'option-label';
 
-                select.addEventListener('focus', function() {
-                    this.style.borderColor = 'var(--gold-accent)';
-                });
-                select.addEventListener('blur', function() {
-                    this.style.borderColor = 'var(--accent-color)';
-                });
+                        const radio = document.createElement('input');
+                        radio.type = 'radio';
+                        radio.name = q.id;
+                        radio.value = optIndex;
+                        if (optIndex === newCorrectIndex) {
+                            radio.dataset.correct = 'true';
+                        }
 
-                qDiv.appendChild(select);
+                        label.appendChild(radio);
+                        label.appendChild(document.createTextNode(opt));
+                        optionsDiv.appendChild(label);
+                    });
+
+                    qDiv.appendChild(optionsDiv);
+
+                } else {
+                    // Dropdown select
+                    const select = document.createElement('select');
+                    select.className = 'answer-select';
+                    select.name = q.id;
+
+                    const defaultOption = document.createElement('option');
+                    defaultOption.value = '';
+                    defaultOption.textContent = '-- තෝරන්න --';
+                    defaultOption.disabled = true;
+                    defaultOption.selected = true;
+                    select.appendChild(defaultOption);
+
+                    q.options.forEach((opt, optIndex) => {
+                        const option = document.createElement('option');
+                        option.value = optIndex;
+                        option.textContent = opt;
+                        if (optIndex === q.correct) {
+                            option.dataset.correct = 'true';
+                        }
+                        select.appendChild(option);
+                    });
+
+                    select.addEventListener('focus', function() {
+                        this.style.borderColor = 'var(--gold-accent)';
+                    });
+                    select.addEventListener('blur', function() {
+                        this.style.borderColor = 'var(--accent-color)';
+                    });
+
+                    qDiv.appendChild(select);
+                }
 
                 // Result div for feedback
                 const resultDiv = document.createElement('div');
@@ -348,28 +390,28 @@ document.addEventListener('DOMContentLoaded', function() {
         clearBtn.dataset.exerciseId = exercise.id;
         
         clearBtn.addEventListener('click', function() {
-            // සියලුම input fields හිස් කරන්න
             const allInputs = questionContainer.querySelectorAll('input[type="text"], input[type="number"]');
             allInputs.forEach(input => input.value = '');
             
-            // සියලුම select dropdown reset කරන්න
             const allSelects = questionContainer.querySelectorAll('select');
             allSelects.forEach(select => {
                 select.selectedIndex = 0;
             });
             
-            // පෙර ප්‍රතිඵල පණිවිඩ ඉවත් කරන්න
+            const allRadios = questionContainer.querySelectorAll('input[type="radio"]');
+            allRadios.forEach(radio => {
+                radio.checked = false;
+            });
+            
             const allResults = questionContainer.querySelectorAll('.result-message');
             allResults.forEach(result => {
                 result.classList.remove('show', 'pass', 'fail');
                 result.textContent = '';
             });
             
-            // කාඩ්පතේ border ඉවත් කරන්න
             const allItems = questionContainer.querySelectorAll('.question-item');
             allItems.forEach(item => item.classList.remove('correct', 'wrong'));
             
-            // සමස්ත ප්‍රතිඵලය ඉවත් කරන්න
             const overallDiv = submitWrapper.querySelector('.result-message');
             if (overallDiv) {
                 overallDiv.classList.remove('show', 'pass', 'fail');
@@ -405,15 +447,30 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!qDiv) return;
 
             if (isChoiceEx) {
+                // Check if radio or dropdown
+                const radioSelected = qDiv.querySelector(`input[type="radio"][name="${q.id}"]:checked`);
                 const select = qDiv.querySelector(`select[name="${q.id}"]`);
                 const resultDiv = qDiv.querySelector('.result-message');
                 
-                // පෙර ප්‍රතිඵල ඉවත් කරන්න
                 if (resultDiv) {
                     resultDiv.classList.remove('show', 'pass', 'fail');
                 }
 
-                if (!select || select.value === '') {
+                let isCorrect = false;
+                let selectedValue = null;
+
+                if (radioSelected) {
+                    // Radio button selected
+                    selectedValue = parseInt(radioSelected.value);
+                    isCorrect = radioSelected.dataset.correct === 'true';
+                } else if (select && select.value !== '') {
+                    // Dropdown selected
+                    selectedValue = parseInt(select.value);
+                    const correctOption = select.querySelector('option[data-correct="true"]');
+                    isCorrect = correctOption && selectedValue === parseInt(correctOption.value);
+                }
+
+                if (selectedValue === null) {
                     allAnswered = false;
                     if (resultDiv) {
                         resultDiv.textContent = '⚠️ කරුණාකර පිළිතුරක් තෝරන්න.';
@@ -422,10 +479,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     return;
                 }
 
-                const selectedValue = parseInt(select.value);
-                const correctOption = select.querySelector('option[data-correct="true"]');
-                const isCorrect = correctOption && selectedValue === parseInt(correctOption.value);
-                
                 qDiv.classList.remove('correct', 'wrong');
                 qDiv.classList.add(isCorrect ? 'correct' : 'wrong');
 
@@ -435,13 +488,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         resultDiv.textContent = '✅ නිවැරදියි!';
                         resultDiv.className = 'result-message show pass';
                     } else {
-                        // Numbers, Counting, Calendar, Nouns කාණ්ඩ සඳහා නිවැරදි පිළිතුරු නොපෙන්වයි
-                        if (exercise.category === 'numbers' || exercise.category === 'counting' || exercise.category === 'calendar' || exercise.category === 'nouns') {
-                            resultDiv.textContent = '❌ වැරදියි. නැවත උත්සාහ කරන්න.';
-                        } else {
-                            const correctText = correctOption ? correctOption.textContent : '';
-                            resultDiv.textContent = `❌ වැරදියි. නිවැරදි පිළිතුර: ${correctText}`;
-                        }
+                        resultDiv.textContent = '❌ වැරදියි. නැවත උත්සාහ කරන්න.';
                         resultDiv.className = 'result-message show fail';
                     }
                 }
@@ -471,12 +518,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         resultDiv.textContent = '✅ නිවැරදියි!';
                         resultDiv.className = 'result-message show pass';
                     } else {
-                        // Numbers, Counting, Calendar කාණ්ඩ සඳහා නිවැරදි පිළිතුරු නොපෙන්වයි
-                        if (exercise.category === 'numbers' || exercise.category === 'counting' || exercise.category === 'calendar') {
-                            resultDiv.textContent = '❌ වැරදියි. නැවත උත්සාහ කරන්න.';
-                        } else {
-                            resultDiv.textContent = `❌ වැරදියි. නිවැරදි පිළිතුර: ${q.correct}`;
-                        }
+                        resultDiv.textContent = '❌ වැරදියි. නැවත උත්සාහ කරන්න.';
                         resultDiv.className = 'result-message show fail';
                     }
                 }
@@ -531,6 +573,6 @@ function handlePlay(event) {
 
     // --- Initial render ---
     setTimeout(() => {
-        renderExercises('all');
+        renderExercises('hiragana');
     }, 100);
 });
