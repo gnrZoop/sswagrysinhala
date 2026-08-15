@@ -38,7 +38,7 @@ const hiraganaData = [
             { 
                 id: 'q4', 
                 question: '④ ただしい ひらがなは どれですか。', 
-                options: ['たまご', 'たまご', 'なもご', 'たもこ'], 
+                options: ['たまご', 'たまこ', 'なもご', 'たもこ'], 
                 correct: 0 ,
                 type: 'radio' 
             },
