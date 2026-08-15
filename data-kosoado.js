@@ -20,42 +20,42 @@ const kosoadoData = [
         questions: [
             { 
                 id: 'k1', 
-                question: '1.', 
+                question: 'れんしゅうＢ - 1.', 
                 options: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'],
                 correct: 2,  // C
                 image: '34.webp'
             },
             { 
                 id: 'k2', 
-                question: '2.', 
+                question: 'れんしゅうＢ - 2.', 
                 options: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'],
                 correct: 7,  // H
                 image: '34.webp'
             },
             { 
                 id: 'k3', 
-                question: '3.', 
+                question: 'れんしゅうＢ - 3.', 
                 options: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'],
                 correct: 11, // L
                 image: '34.webp'
             },
             { 
                 id: 'k4', 
-                question: '4.', 
+                question: 'れんしゅうＢ - 4.', 
                 options: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'],
                 correct: 6,  // G
                 image: '34.webp'
             },
             { 
                 id: 'k5', 
-                question: '5.', 
+                question: 'れんしゅうＢ - 5.', 
                 options: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'],
                 correct: 4,  // E
                 image: '34.webp'
             },
             { 
                 id: 'k6', 
-                question: '6.', 
+                question: 'れんしゅうＢ - 6.', 
                 options: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'],
                 correct: 10, // K
                 image: '34.webp'
